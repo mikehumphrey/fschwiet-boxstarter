@@ -1,22 +1,23 @@
 try {
 
     Update-ExecutionPolicy RemoteSigned
-    Install-WindowsUpdate -AcceptEula
+#    Install-WindowsUpdate -AcceptEula
     Set-ExplorerOptions -showHidenFilesFoldersDrives -showProtectedOSFiles -showFileExtensions
     Set-TaskbarSmall
     Enable-RemoteDesktop
 
-    cinstm nuget.commandline
-    cinstm fiddler
+#    cinstm nuget.commandline
+#    cinstm fiddler
     cinstm keepassx
     cinstm console-devel
-    cinstm sublimetext2
+#    cinstm sublimetext2
+    cinst Atom
     cinstm googlechrome
     cinstm windirstat
     cinstm sysinternals
-    cinstm NugetPackageExplorer
-    cinstm windbg
-    cinstm virtualclonedrive
+#    cinstm NugetPackageExplorer
+#    cinstm windbg
+#    cinstm virtualclonedrive
 
     #Install-ChocolateyPackage 'HW Monitor' 'exe' '/silent' 'ftp://ftp.cpuid.com/hwmonitor/hwmonitor_1.22-64bit.exe'
 
@@ -26,11 +27,10 @@ try {
 
     cinstm curl
     cinstm putty
-    cinstm VirtualBox
+#    cinstm VirtualBox
     cinstm WinMerge
     cinstm 7zip
     cinstm sumatrapdf
-    cinstm putty
 
     cinst IIS-WebServerRole -source windowsfeatures
     cinst IIS-HttpCompressionDynamic -source windowsfeatures
@@ -44,13 +44,13 @@ try {
     #cinst aspnetmvc -version 2.0
     #cinst aspnetmvc -version 3.0
 
-    $sublimeDir = "$env:programfiles\Sublime Text 2"
+#    $atomDir = "$env:programfiles\Atom"
 
     Install-ChocolateyPinnedTaskBarItem "$env:programfiles\console\console.exe"
-    Install-ChocolateyPinnedTaskBarItem "$sublimeDir\sublime_text.exe"
+    Install-ChocolateyPinnedTaskBarItem "C:\ProgramData\chocolatey\bin\atom.exe"
     Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Google\Chrome\Application\chrome.exe"
 
-    Install-ChocolateyFileAssociation ".txt" "$env:programfiles\Sublime Text 2\sublime_text.exe"
+    Install-ChocolateyFileAssociation ".txt" "C:\ProgramData\chocolatey\bin\atom.exe"
 
     # if(!(Test-Path("$sublimeDir\data")){mkdir "$sublimeDir\data"}
     # copy-item (Join-Path (Get-PackageRoot($MyInvocation)) 'sublime\*') -Force -Recurse "$sublimeDir\data"
@@ -58,9 +58,9 @@ try {
 
     copy-item (Join-Path (Get-PackageRoot($MyInvocation)) 'console.xml') -Force $env:appdata\console\console.xml
 
-    Write-ChocolateySuccess 'FschwietCore'
+    Write-ChocolateySuccess 'MEA_BoxstarterCore'
 
 } catch {
-  Write-ChocolateyFailure 'FschwietCore' $($_.Exception.Message)
+  Write-ChocolateyFailure 'MEA_BoxstarterCore' $($_.Exception.Message)
   throw
 }
