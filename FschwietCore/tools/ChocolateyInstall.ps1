@@ -6,31 +6,31 @@ try {
     Set-TaskbarSmall
     Enable-RemoteDesktop
 
-#    cinstm nuget.commandline
-#    cinstm fiddler
-    cinstm keepassx
-    cinstm console-devel
-#    cinstm sublimetext2
+#    cinst nuget.commandline
+#    cinst fiddler
+    cinst keepassx
+    cinst console-devel
+#    cinst sublimetext2
     cinst Atom
-    cinstm googlechrome
-    cinstm windirstat
-    cinstm sysinternals
-#    cinstm NugetPackageExplorer
-#    cinstm windbg
-#    cinstm virtualclonedrive
+    cinst googlechrome
+    cinst windirstat
+    cinst sysinternals
+#    cinst NugetPackageExplorer
+#    cinst windbg
+#    cinst virtualclonedrive
 
     #Install-ChocolateyPackage 'HW Monitor' 'exe' '/silent' 'ftp://ftp.cpuid.com/hwmonitor/hwmonitor_1.22-64bit.exe'
 
-    cinstm git
-    cinstm git-credential-winstore
-    cinstm poshgit
+    cinst git
+    cinst git-credential-winstore
+    cinst poshgit
 
-    cinstm curl
-    cinstm putty
-#    cinstm VirtualBox
-    cinstm WinMerge
-    cinstm 7zip
-    cinstm sumatrapdf
+    cinst curl
+    cinst putty
+#    cinst VirtualBox
+    cinst WinMerge
+    cinst 7zip
+    cinst sumatrapdf
 
     cinst IIS-WebServerRole -source windowsfeatures
     cinst IIS-HttpCompressionDynamic -source windowsfeatures
